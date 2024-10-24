@@ -1,4 +1,8 @@
 #!/bin/bash
+if [ ! -d "${HOME}/Thunderbird" ]; then
+    mkdir -p ${HOME}/Thunderbird
+    chown -R app:app ${HOME}/Thunderbird
+fi
 if [ ! -f "${HOME}/Thunderbird/prefs.js" ]; then
   echo "profile does not exist, creating new one"
   touch "${HOME}/Thunderbird/prefs.js"
